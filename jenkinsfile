@@ -1,0 +1,20 @@
+timestamps {
+
+node () {
+
+	stage ('aws-lambda-helloworld - Checkout') {
+ 	 checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/rjsriram/aws-lambda-helloworld.git']]]) 
+	}
+	stage ('aws-lambda-helloworld - Build') {
+ 	
+// Maven build step
+	withMaven(maven: 'Maven Default') { 
+ 			if(isUnix()) {
+ 				sh "mvn clean package " 
+			} else { 
+ 				bat "mvn clean package " 
+			} 
+ 		} 
+	}
+}
+}
