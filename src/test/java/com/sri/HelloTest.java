@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.amazonaws.services.lambda.runtime.Context;
-import com.namitsaxena.aws.lambda.HelloWorldLambda;
+import com.sricapg.aws.lambda.HelloWorldLambda;
 
 public class HelloTest {
 
