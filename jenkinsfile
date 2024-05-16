@@ -1,7 +1,6 @@
-pipeline {
-    agent any 
-
-    stages {
+timestamps {
+    
+    node () {
         stage('Checkout') {
             steps {
                 echo 'Checking out code..'
