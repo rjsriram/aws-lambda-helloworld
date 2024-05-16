@@ -3,11 +3,9 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            steps {
                 echo 'Checking out code..'
                 // Here you can add code checkout steps
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/rjsriram/aws-lambda-helloworld.git']]])
-            }
         }
         stage('Build') {
             steps {
