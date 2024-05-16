@@ -14,7 +14,7 @@ pipeline {
                 echo 'Building..'
                 // Here you can add Maven build steps
                 withMaven(maven: 'Maven Default') {
-                    if (isUnix()) {
+                    if(isUnix()) {
                         sh 'mvn clean package'
                     } else {
                         bat 'mvn clean package'
